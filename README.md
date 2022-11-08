@@ -12,7 +12,8 @@ Ensimmäisellä viikolla tätä **Gittiä**.
 
 *-Bernard Moitessier* 
 
+Tree tulostus:
 [Tree](laskarit/viikko1/komentorivi.txt)
-
+Git log:
 [Gitlog](laskarit/viikko1/gitlog.txt)
 
