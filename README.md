@@ -11,3 +11,8 @@ Ensimmäisellä viikolla tätä **Gittiä**.
 > and to have fullfilled it.
 
 *-Bernard Moitessier* 
+
+[Tree](laskarit/viikko1/komentorivi.txt)
+
+[Gitlog](laskarit/viikko1/gitlog.txt)
+
