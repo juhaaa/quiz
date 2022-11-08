@@ -7,7 +7,7 @@ Ensimmäisellä viikolla tätä **Gittiä**.
 
 ~~Viikon 1 harjoitukset ovat vielä kesken.~~
 
-> There are to terrible things for a man: not to have fullfilled his dream,
+> There are two terrible things for a man: not to have fullfilled his dream,
 > and to have fullfilled it.
 
 *-Bernard Moitessier* 
