@@ -13,8 +13,7 @@ Sovelluksessa on vain yksi käyttäjärooli
 -Sovelluksessa on aloitusnäyttö, mistä on mahdollisuus aloittaa uusi peli tai tarkastella tuloksia. Tuloksista voi palata
 aloitusnäyttöön ja pelin loppuessa peli siirtyy tulosnäytölle.
 
-<img src=".kuvat/logiikka.jpg" alt="logiikka" width="600"/>
-![] (./kuvat/logiikka.jpg)
+<img src="kuvat/logiikka.jpg" alt="logiikka" width="450"/>
 
 -Käyttäjän aloittaessa pelin, kysyy sovellus käyttäjältä ennalta määrätyn määrän kysymyksiä ja
 pelaaja saa pisteitä vastatatessaan oikein.
