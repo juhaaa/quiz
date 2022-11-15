@@ -14,6 +14,7 @@ Sovelluksessa on vain yksi käyttäjärooli
 aloitusnäyttöön ja pelin loppuessa peli siirtyy tulosnäytölle.
 
 <img src=".kuvat/logiikka.jpg" alt="logiikka" width="600"/>
+![] (./kuvat/logiikka.jpg)
 
 -Käyttäjän aloittaessa pelin, kysyy sovellus käyttäjältä ennalta määrätyn määrän kysymyksiä ja
 pelaaja saa pisteitä vastatatessaan oikein.
