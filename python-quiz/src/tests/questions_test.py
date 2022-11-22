@@ -1,9 +1,11 @@
 import unittest
 from questions import Questions
+from connection import get_db_connection
+
 
 class TestQuestions(unittest.TestCase):
     def setUp(self):
-        self.a = Questions()
+        self.a = Questions(get_db_connection())
         self.questions = self.a.get_questions(2)
 
     #Test for set amount.
