@@ -3,4 +3,6 @@
 |Päivä	|Aika	|Työn alla|
 |:----:	|:--:	|:------------	|
 | 15.11	|2	|Vaatimusten määrittelyä	|
-|Yht.	|2	|
+|21.11	|3	|Sovelluslogiikan pohdintaa	|
+|22.11	|7	|Tkinter ihmettelyä, ensimmäiset rivit koodia.|
+|Yht.	|14	|
