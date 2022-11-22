@@ -5,7 +5,7 @@
 Tämä repositorio on Helsingin yliopiston kurssin ohjelmistotekniikka palautuksia varten.
 Repositoriossa on viikkoharjoitusten palautuksia sekä harjoitustyö.
 
-##Harjoitustyö
+## Harjoitustyö
 
 Kurssilla toteutan harjoitustyönä visailu-appin, aiheena maantiede.
 Sovellus on vielä kesken.
