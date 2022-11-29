@@ -1,5 +1,5 @@
 import unittest
-from questions import Questions
+from repositories.questions import Questions
 from connection import get_db_connection
 
 
