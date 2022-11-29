@@ -7,9 +7,7 @@ class Questions:
     #Class get connection to question database
 
     def __init__(self, connection):
-        self.amount = 0
         self._db = connection
-        self._cur = self._db.cursor()
         
         
     #Returns tuple of correct answer, country name and list of answers , after randomizing the order. 
@@ -18,7 +16,7 @@ class Questions:
 
     def get_questions(self):
 
-        data = self._cur.execute("SELECT * FROM Countries ORDER BY RANDOM() LIMIT 1").fetchall()
+        data = self._db.execute("SELECT * FROM Countries ORDER BY RANDOM() LIMIT 1").fetchall()
         cca2 = data[0][0]
         cname = data[0][1]
         correct = data[0][2]
@@ -37,12 +35,12 @@ class Questions:
 
     def get_wrong_answers(self, cca2):
 
-        data = self._cur.execute("SELECT Cities.name FROM Cities, Countries WHERE Cities.cca2=? AND Cities.cca2=Countries.cca2 AND Countries.capital<>Cities.name ORDER BY RANDOM() LIMIT 3",[cca2]).fetchall()
+        data = self._db.execute("SELECT Cities.name FROM Cities, Countries WHERE Cities.cca2=? AND Cities.cca2=Countries.cca2 AND Countries.capital<>Cities.name ORDER BY RANDOM() LIMIT 3",[cca2]).fetchall()
         answer_count = len(data)
 
         if answer_count < 3:
             amount = 3- answer_count
-            extra_answers = self._cur.execute("SELECT Cities.name FROM Cities, Countries WHERE Countries.cca2=Cities.cca2 AND Countries.capital<>Cities.name ORDER BY RANDOM() LIMIT ?",[amount]).fetchall()
+            extra_answers = self._db.execute("SELECT Cities.name FROM Cities, Countries WHERE Countries.cca2=Cities.cca2 AND Countries.capital<>Cities.name ORDER BY RANDOM() LIMIT ?",[amount]).fetchall()
             for i in extra_answers:
                 data.append(i)
 
