@@ -1,8 +1,9 @@
 import unittest
 from entities.player import Player
 
+
 class TestPlayer(unittest.TestCase):
-    
+
     def setUp(self):
         self.player = Player()
 
@@ -25,6 +26,3 @@ class TestPlayer(unittest.TestCase):
         self.player.set_score_to_zero()
 
         self.assertEqual(self.player.score, 0)
-
-        
-    

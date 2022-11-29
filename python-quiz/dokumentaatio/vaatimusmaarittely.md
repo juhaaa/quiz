@@ -2,7 +2,7 @@
 
 ## Sovelluksen tarkoitus
 
-Sovellus on graafinen tietovisa, jossa tarkoituksena on vastata mahdollisimman moneen kysymykseen oikein.
+Sovellus on tietovisa, jossa tarkoituksena on vastata mahdollisimman moneen kysymykseen oikein. Aiheena pääkaupungit.
 
 ## Käyttäjät
 
@@ -28,3 +28,8 @@ pelaajiin.
 -Pisteiden tallennus online.
 
 
+## Tähän mennessä tehty
+
+-Kysymystietokanta kunnossa
+-Kysymykset voidaan hakea tietokannasta.
+-Alustava komentorivikäyttöliittymä.
