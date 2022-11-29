@@ -32,7 +32,7 @@ class Game:
 
     def check_correct(self, correct, answer):
         if correct == answer:
-            print(f"You are correct. {correct} is right answer!")
+            print(f"You are correct. {correct} is the right answer!")
             self.player.increase_score()
             print(self.player.score, "\n")
         else:

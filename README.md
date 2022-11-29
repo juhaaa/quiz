@@ -16,4 +16,5 @@ Sovellus on vielä kesken.
 
 - [Työaikakirjanpito](python-quiz/dokumentaatio/tuntikirjanpito.md)
 
+- [Arkkitehtuuri](python-quiz/dokumentaatio/arkkitehtuuri.md)
 
