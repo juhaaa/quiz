@@ -20,6 +20,8 @@ tallennetaan .csv tiedostoon.
 
 - [Arkkitehtuuri](python-quiz/dokumentaatio/arkkitehtuuri.md)
 
+- [Release](https://github.com/juhaaa/ot-harjoitustyo/releases)
+
 ## Ohjelman käyttö
 
 Kirjoita seuraavat komennot:

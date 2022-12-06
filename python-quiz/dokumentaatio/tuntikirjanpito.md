@@ -7,4 +7,6 @@
 |22.11	|7	|Tkinter ihmettelyä, ensimmäiset rivit koodia.|
 |28.11	|6	|Tietokannan rakentamista, tietokantaluokan uudelleenkirjoitus.|
 |29.11	|5	|Komentoriviversion rakennusta	|
-|Yht.	|25	|
+|5.12	|2	|Repositorio- mallin ymmärtämistä, graafisen käyttöliittymän testailua.|
+|6.12	|7	|Sovelluslogiikan eriyttämistä, pisteiden tallennus.|
+|Yht.	|34	|

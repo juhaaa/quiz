@@ -33,3 +33,9 @@ pelaajiin.
 -Kysymystietokanta kunnossa
 -Kysymykset voidaan hakea tietokannasta.
 -Alustava komentorivikäyttöliittymä.
+-Pisteiden tallennus
+
+## Tekemättä
+
+-Graafinen käyttöliittymä
+
