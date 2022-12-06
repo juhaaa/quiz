@@ -1,9 +1,11 @@
 import random
-
+from services.question_services import question_service
+from services.question_services import additional_answers
+from services.question_services import more_additional_answers
 
 class Questions:
 
-    # Class get connection to question database
+    # Class gets connection to question database
     def __init__(self, connection):
         self._db = connection
 
@@ -13,8 +15,7 @@ class Questions:
     # DB under progress.
     def get_questions(self):
 
-        data = self._db.execute(
-            "SELECT * FROM Countries ORDER BY RANDOM() LIMIT 1").fetchall()
+        data = question_service(self._db)
         cca2 = data[0][0]
         cname = data[0][1]
         correct = data[0][2]
@@ -30,16 +31,12 @@ class Questions:
 
     def get_wrong_answers(self, cca2):
 
-        data = self._db.execute(
-            "SELECT Cities.name FROM Cities, Countries WHERE Cities.cca2=? AND Cities.cca2=Countries.cca2 AND Countries.capital<>Cities.name ORDER BY RANDOM() LIMIT 3", # pylint: disable=line-too-long
-            [cca2]).fetchall()
+        data = additional_answers(cca2, self._db)
         answer_count = len(data)
 
         if answer_count < 3:
             amount = 3 - answer_count
-            extra_answers = self._db.execute(
-                "SELECT Cities.name FROM Cities, Countries WHERE Countries.cca2=Cities.cca2 AND Countries.capital<>Cities.name ORDER BY RANDOM() LIMIT ?", # pylint: disable=line-too-long
-                [amount]).fetchall()
+            extra_answers = more_additional_answers(amount, self._db)
             for i in extra_answers:
                 data.append(i)
 

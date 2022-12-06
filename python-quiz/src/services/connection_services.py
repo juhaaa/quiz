@@ -6,5 +6,7 @@ dir = os.path.dirname(__file__)  # pylint: disable=redefined-builtin
 
 
 def get_db_connection():
-    dbconnection = sqlite3.connect(os.path.join(dir, "..", "data", "data.db"))
+    dbconnection = sqlite3.connect(os.path.join(dir, "..", "..", "data", "data.db"))
     return dbconnection
+
+

@@ -1,10 +1,12 @@
-from repositories.questions import Questions
-from connection import get_db_connection
 from entities.game import Game
-from entities.player import Player
+from entities.highscores import Highscores
+from services.highscore_services import print_scores
+import datetime
 
-a = Questions(get_db_connection())
-print(a.get_questions())
-player = Player()
-game = Game(player, a)
-game.play()
+if __name__ == "__main__":
+    date = str(datetime.date.today())
+    game = Game()
+    result = game.play()
+    score = Highscores("juha", result, date)
+    score.save_score()
+    print_scores()

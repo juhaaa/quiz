@@ -1,6 +1,6 @@
 import unittest
 from repositories.questions import Questions
-from connection import get_db_connection
+from services.connection_services import get_db_connection
 
 
 class TestQuestions(unittest.TestCase):
