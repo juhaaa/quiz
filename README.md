@@ -24,31 +24,31 @@ tallennetaan .csv tiedostoon.
 
 Kirjoita seuraavat komennot:
 
-'''bash
+```bash
 poetry install
 
 poetry run invoke start
-'''
+```
 
 ## Muita komentoja
 
 1. Testit
 
-'''bash
+```bash
 poetry run invoke test
-'''
+```
 
 2. Testiraportti
 
-'''bash
+```bash
 poetry run invoke coverage-report
-'''
+```
 
 3. Pylint
 
-'''bash
+```bash
 poetry run invoke lint
-'''
+```
 
 
 		
