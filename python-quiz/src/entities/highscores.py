@@ -10,8 +10,3 @@ class Highscores:
 
     def save_score(self):
         save_to_file(self)
-
-
-
-if __name__ == "__main__":
-    pass

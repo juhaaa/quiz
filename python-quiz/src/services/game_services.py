@@ -13,7 +13,7 @@ def init_questions():
 def play_game(game):
     question_object = init_questions()
     game.running = True
-    
+
     while game.running:
         question = question_object.get_questions()
         correct, country, answers = question[0], question[1], question[2]
@@ -25,10 +25,10 @@ def play_game(game):
         game.rounds += 1
         if game.rounds == 10:
             game.running = False
-    
+
     print_score(game)
     return game.score
-    
+
 
 # checks answers outcome
 # updates game- object accordingly
@@ -64,4 +64,3 @@ def print_question(country, answers):
 
 def print_score(game):
     print(f"Your Score: {game.score}")
-

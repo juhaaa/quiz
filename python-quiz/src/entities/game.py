@@ -6,10 +6,10 @@ class Game:
         self.rounds = 0
         self.score = 0
         self.running = False
-    
+
     def play(self):
         return play_game(self)
-    
+
     def set_player_name(self, name):
         self.player = name
 
