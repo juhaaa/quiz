@@ -24,6 +24,7 @@ def save_to_file(highscore):
     scores = []
     file_check()
     if check_scores(highscore.score):
+        highscore.name = get_player_name()
         score = [highscore.name, highscore.score, highscore.date]
         scores.append(score)
         
@@ -77,6 +78,18 @@ def read_data():
             if int(rows[1]) < min_score:
                 min_score = int(rows[1])
     return score_amount, min_score
+
+# if user makes it to the list,
+# we need a name
+
+def get_player_name():
+    while True:
+        player_name = input("Write your name here: ")
+        if len(player_name) < 20:
+            break
+        print("20 characters max!")
+    return player_name
+
             
 
 
