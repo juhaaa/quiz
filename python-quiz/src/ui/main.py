@@ -28,7 +28,7 @@ def start_game():
     date = str(datetime.date.today())
     game = Game()
     result = game.play()
-    score = Highscores("juha", result, date)
+    score = Highscores("", result, date)
     score.save_score()
 
 def highscores():
