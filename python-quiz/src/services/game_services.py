@@ -1,5 +1,9 @@
 from repositories.questions import Questions
 from services.connection_services import get_db_connection
+from entities.highscores import Highscores
+from entities.game import Game
+from ui.game_ui import game_interface_main, ui_correct_answer, ui_wrong_answer
+import datetime
 
 
 #init questions
@@ -8,59 +12,46 @@ def init_questions():
     question_object = Questions(get_db_connection())
     return question_object
 
+#Start game
+
+def start_game(stdscr):
+    date = str(datetime.date.today())
+    game = Game()
+    result = play_game(game, stdscr)
+    score = Highscores("", result, date)
+    score.save_score(stdscr)
+
 # main game loop, returns score
 
-def play_game(game):
+def play_game(game, stdscr):
     question_object = init_questions()
     game.running = True
 
     while game.running:
         question = question_object.get_questions()
         correct, country, answers = question[0], question[1], question[2]
-        print_question(country, answers)
-        user_input = get_input()
+        
+        user_input = game_interface_main(stdscr, country, answers, game.score)
         if user_input == 0:
             break
-        check_correct(game, correct, answers[user_input - 1])
+        if check_correct(stdscr, game, correct, answers[user_input - 1]):
+            game.increase_score()
         game.rounds += 1
-        if game.rounds == 10:
+        if game.rounds == 11:
             game.running = False
 
-    print_score(game)
     return game.score
 
 
 # checks answers outcome
 # updates game- object accordingly
 
-def check_correct(game, correct, answer):
+def check_correct(stdscr, game, correct, answer):
     if correct == answer:
-        print(f"You are correct. {correct} is the right answer!")
-        game.increase_score()
-        print(game.score, "\n")
+        correct_string = f"You are correct. {correct} is the right answer!"
+        ui_correct_answer(stdscr, correct_string)
+        return True
     else:
-        print("Wrong answer!")
-        print(game.score, "\n")
-
-# gets input from user during gameplay
-
-def get_input():
-    valid = [0, 1, 2, 3, 4]
-    while True:
-        user_input = input("Choose between 1-4, zero ends: ")
-        try:
-            user_input = int(user_input)
-        except ValueError:
-            print("Input not valid, try again")
-            continue
-        if user_input in valid:
-            break
-        print("Input not valid, try again!")
-    return user_input
-
-def print_question(country, answers):
-    print(f"What is the capital city of {country}?")
-    print(f"1: {answers[0]} 2: {answers[1]} 3: {answers[2]} 4: {answers[3]}")
-
-def print_score(game):
-    print(f"Your Score: {game.score}")
+        wrong_string = "Wrong answer!"
+        ui_wrong_answer(stdscr, wrong_string)
+        return False

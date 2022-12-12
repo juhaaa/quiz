@@ -1,6 +1,7 @@
 import os
 from os.path import exists
 import csv
+from ui.highscore_ui import user_input_ui
 
 
 #get path
@@ -19,13 +20,13 @@ def file_check():
 
 # saves highscore to a .csv file ordered by score
 
-def save_to_file(highscore):
+def save_to_file(highscore, stdscr):
     if highscore.score == 0:
         return
     scores = []
     file_check()
     if check_scores(highscore.score):
-        highscore.name = get_player_name()
+        highscore.name = user_input_ui(stdscr)
         score = [highscore.name, highscore.score, highscore.date]
         scores.append(score)
 
@@ -50,16 +51,20 @@ def check_scores(score):
             return False
     return True
 
-# prints saved highscores top-10
+# return saved highscores top-10
 
-def print_scores():
+def get_scores():
+    scores_as_str_list = []
     file_check()
+    i = 1
     with open(path, "r", encoding='UTF8') as file:
         for row in file:
             score = (row.strip().split(","))
-            print(
-                f"Player: {score[0]}, Score: {score[1]}, Date: {score[2]}"
+            scores_as_str_list.append(
+                f"{i}. {score[0]}, Score: {score[1]}, Date: {score[2]}"
                 )
+            i += 1
+    return scores_as_str_list
 
 
 # reads highscores.csv and returns amount of scores saved
