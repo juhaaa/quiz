@@ -24,13 +24,16 @@ tallennetaan .csv tiedostoon.
 
 ## Ohjelman käyttö
 
-Kirjoita seuraavat komennot:
+Kirjoita seuraavat komennot terminaalissa:
 
 ```bash
 poetry install
 
 poetry run invoke start
 ```
+
+- Ohjelmassa navigoidaan nuolinäppäimillä
+- Valinta vahvistetaan joko Enterillä tai välilyönnillä
 
 ## Muita komentoja
 
