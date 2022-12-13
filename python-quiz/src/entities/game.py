@@ -12,6 +12,3 @@ class Game:
 
     def increase_score(self):
         self.score += 1
-
-    def set_score_to_zero(self):
-        self.score = 0

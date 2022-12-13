@@ -16,13 +16,13 @@ def file_check():
     if not exists(path):
         with open(path, "w", encoding='UTF8') as file:
             file.close()
-
+    return True
 
 # saves highscore to a .csv file ordered by score
 
 def save_to_file(highscore, stdscr):
     if highscore.score == 0:
-        return
+        return False
     scores = []
     file_check()
     if check_scores(highscore.score):
@@ -40,7 +40,7 @@ def save_to_file(highscore, stdscr):
             writer = csv.writer(file)
             for row in scores:
                 writer.writerow(row)
-
+            return True
 
 # checks does the current score qualify for top list
 
@@ -56,8 +56,9 @@ def check_scores(score):
 def get_scores():
     scores_as_str_list = []
     file_check()
-    i = 1
+
     with open(path, "r", encoding='UTF8') as file:
+        i = 1
         for row in file:
             score = (row.strip().split(","))
             scores_as_str_list.append(
@@ -81,18 +82,3 @@ def read_data():
             if int(rows[1]) < min_score:
                 min_score = int(rows[1])
     return score_amount, min_score
-
-# if user makes it to the list,
-# we need a name
-
-def get_player_name():
-    while True:
-        player_name = input("Write your name here: ")
-        if len(player_name) < 20:
-            break
-        print("20 characters max!")
-    return player_name
-
-
-if __name__ == "__main__":
-    pass

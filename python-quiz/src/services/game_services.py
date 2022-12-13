@@ -31,12 +31,13 @@ def play_game(game, stdscr):
     while game.running:
         question = question_object.get_questions()
         correct, country, answers = question[0], question[1], question[2]
-
         user_input = game_interface_main(stdscr, country, answers, game.score)
-        if user_input == 0:
-            break
-        if check_correct(stdscr, correct, answers[user_input - 1]):
+        
+        if check_correct(correct, answers[user_input - 1]):
             game.increase_score()
+            ui_answer(stdscr, f"You are correct. {correct} is the right answer!")
+        else:
+            ui_answer(stdscr, "Wrong answer!")
         game.rounds += 1
         if game.rounds == 11:
             game.running = False
@@ -47,11 +48,7 @@ def play_game(game, stdscr):
 # checks answers outcome
 # return boolean to update game- object accordingly
 
-def check_correct(stdscr, correct, answer):
+def check_correct(correct, answer):
     if correct == answer:
-        correct_string = f"You are correct. {correct} is the right answer!"
-        ui_answer(stdscr, correct_string)
         return True
-    wrong_string = "Wrong answer!"
-    ui_answer(stdscr, wrong_string)
     return False
