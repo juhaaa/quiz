@@ -10,4 +10,5 @@
 |5.12	|2	|Repositorio- mallin ymmärtämistä, graafisen käyttöliittymän testailua.|
 |6.12	|7	|Sovelluslogiikan eriyttämistä, pisteiden tallennus.|
 |12.12	|8	|Curses- käyttöliittymä|
-|Yht.	|42	|
+|13.12	|6	|Testikattavuuden parannusta.|
+|Yht.	|48	|
