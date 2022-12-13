@@ -22,7 +22,7 @@ def file_check():
 
 def save_to_file(highscore, stdscr):
     if highscore.score == 0:
-        return False
+        return
     scores = []
     file_check()
     if check_scores(highscore.score):
@@ -40,8 +40,6 @@ def save_to_file(highscore, stdscr):
             writer = csv.writer(file)
             for row in scores:
                 writer.writerow(row)
-            return True
-
 # checks does the current score qualify for top list
 
 def check_scores(score):

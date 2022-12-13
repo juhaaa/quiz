@@ -32,7 +32,7 @@ def play_game(game, stdscr):
         question = question_object.get_questions()
         correct, country, answers = question[0], question[1], question[2]
         user_input = game_interface_main(stdscr, country, answers, game.score)
-        
+
         if check_correct(correct, answers[user_input - 1]):
             game.increase_score()
             ui_answer(stdscr, f"You are correct. {correct} is the right answer!")
