@@ -9,4 +9,5 @@
 |29.11	|5	|Komentoriviversion rakennusta	|
 |5.12	|2	|Repositorio- mallin ymmärtämistä, graafisen käyttöliittymän testailua.|
 |6.12	|7	|Sovelluslogiikan eriyttämistä, pisteiden tallennus.|
-|Yht.	|34	|
+|12.12	|8	|Curses- käyttöliittymä|
+|Yht.	|42	|

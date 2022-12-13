@@ -26,6 +26,7 @@ def main(stdscr):
             elif row_index == 0:
                 start_game(stdscr)
         row_index = menu_scroll(key, row_index, 2)
+        curses.beep()
         stdscr.refresh()
     
 # prints main menu on screen, highlighting 
@@ -52,7 +53,7 @@ def main_menu(stdscr, row_index):
     stdscr.refresh()
 
 
-# using get_scores method from highscore_services,
+# using get_scores function from highscore_services,
 # prints scores to the screen and then waits for
 # anykey
 

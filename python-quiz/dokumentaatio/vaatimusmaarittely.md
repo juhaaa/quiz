@@ -6,12 +6,12 @@ Sovellus on tietovisa, jossa tarkoituksena on vastata mahdollisimman moneen kysy
 
 ## Käyttäjät
 
-Sovelluksessa on vain yksi käyttäjärooli
+Sovelluksessa on vain yksi käyttäjärooli eli pelin pelaaja.
 
 ## Toiminnallisuus
 
 - Sovelluksessa on aloitusnäyttö, mistä on mahdollisuus aloittaa uusi peli tai tarkastella tuloksia. Tuloksista voi palata
-aloitusnäyttöön ja pelin loppuessa peli siirtyy tulosnäytölle.
+aloitusnäyttöön ja pelin loppuessa peli siirtyy aloitusnäytölle. Jos pisteet riittävät, tässä välissä kysytään pelaajan nimi.
 
 ![](./kuvat/logiikka.jpg)
 
@@ -34,8 +34,10 @@ pelaajiin.
 - Kysymykset voidaan hakea tietokannasta.
 - Alustava komentorivikäyttöliittymä.
 - Pisteiden tallennus
+- "Graafinen terminaalikäyttöliittymä", curses.
 
 ## Tekemättä
 
-- Graafinen käyttöliittymä
+- Testausta uupuu
+- Online tallennus?
 

@@ -15,3 +15,8 @@
 - Pyritty siistimään projektin rakennetta ja eriyttämään sovelluslogiikkaa
 - Pisteiden tallennus paikallisesti toteutettu .csv tiedostolla.
  	-> Vain 10 tulosta pidetään tallessa
+
+## Viikko 6
+
+- Muutettu käyttöliittymä käyttäen curses- kirjastoa.
+- Pyritty täydentämään edellisellä viikolla menetettyä(100 -> 20) testikattavuutta.

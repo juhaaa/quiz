@@ -44,7 +44,7 @@ def play_game(game, stdscr):
 
 
 # checks answers outcome
-# updates game- object accordingly
+# return boolean to update game- object accordingly
 
 def check_correct(stdscr, game, correct, answer):
     if correct == answer:

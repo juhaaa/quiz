@@ -16,6 +16,7 @@ def user_input_ui(stdscr):
     user_name = stdscr.getstr(15).decode()
     stdscr.clear()
     stdscr.addstr(y,x, f"You did good {user_name}!")
+    curses.beep()
     stdscr.getch()
     stdscr.refresh()
     return user_name
