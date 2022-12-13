@@ -40,7 +40,7 @@ def game_interface_choices(stdscr, row_index, country, answers, score):
 
 # these two display the outcome of players answers
 
-def ui_correct_answer(stdscr, correct_string):
+def ui_answer(stdscr, correct_string):
     stdscr.clear()
     h, w = stdscr.getmaxyx()
     x = w//2 - len(correct_string)//2
@@ -49,14 +49,3 @@ def ui_correct_answer(stdscr, correct_string):
     curses.beep()
     stdscr.refresh()
     stdscr.getch()
-
-def ui_wrong_answer(stdscr, wrong_string):
-    stdscr.clear()
-    h, w = stdscr.getmaxyx()
-    x = w//2 - len(wrong_string)//2
-    y = h//2
-    stdscr.addstr(y, x, wrong_string, curses.A_ITALIC)
-    curses.beep()
-    stdscr.refresh()
-    stdscr.getch()
-

@@ -1,9 +1,10 @@
+import datetime
 from repositories.questions import Questions
 from services.connection_services import get_db_connection
 from entities.highscores import Highscores
 from entities.game import Game
-from ui.game_ui import game_interface_main, ui_correct_answer, ui_wrong_answer
-import datetime
+from ui.game_ui import game_interface_main, ui_answer
+
 
 
 #init questions
@@ -30,11 +31,11 @@ def play_game(game, stdscr):
     while game.running:
         question = question_object.get_questions()
         correct, country, answers = question[0], question[1], question[2]
-        
+
         user_input = game_interface_main(stdscr, country, answers, game.score)
         if user_input == 0:
             break
-        if check_correct(stdscr, game, correct, answers[user_input - 1]):
+        if check_correct(stdscr, correct, answers[user_input - 1]):
             game.increase_score()
         game.rounds += 1
         if game.rounds == 11:
@@ -46,12 +47,11 @@ def play_game(game, stdscr):
 # checks answers outcome
 # return boolean to update game- object accordingly
 
-def check_correct(stdscr, game, correct, answer):
+def check_correct(stdscr, correct, answer):
     if correct == answer:
         correct_string = f"You are correct. {correct} is the right answer!"
-        ui_correct_answer(stdscr, correct_string)
+        ui_answer(stdscr, correct_string)
         return True
-    else:
-        wrong_string = "Wrong answer!"
-        ui_wrong_answer(stdscr, wrong_string)
-        return False
+    wrong_string = "Wrong answer!"
+    ui_answer(stdscr, wrong_string)
+    return False

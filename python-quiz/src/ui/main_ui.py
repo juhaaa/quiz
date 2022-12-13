@@ -1,7 +1,6 @@
 import curses
 from services.highscore_services import get_scores
 from services.game_services import start_game
-from curses import wrapper
 from services.ui_services import menu_scroll
 
 
@@ -69,7 +68,3 @@ def highscores(stdscr):
     stdscr.getch()
     stdscr.refresh()
 
-
-if __name__ == "__main__":
-    wrapper(main)
-    
