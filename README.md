@@ -24,7 +24,7 @@ tallennetaan .csv tiedostoon.
 
 ## Ohjelman käyttö
 
-Kirjoita seuraavat komennot terminaalissa:
+Navigoi ensin python-quiz kansioon ja kirjoita seuraavat komennot terminaalissa:
 
 ```bash
 poetry install
