@@ -12,7 +12,7 @@ Sovelluksessa käyttäjä vastaa pääkaupunkiaiheisiin kysymyksiin.
 Kysymykset on tallennettu tietokantaan ja pelissä tarpeeksi hyvät pisteet
 tallennetaan .csv tiedostoon.
 
-- [Changelog](python-quiz/dokumentaatio"changelog.md)
+- [Changelog](python-quiz/dokumentaatio/changelog.md)
 
 - [Vaatimusmaarittely](python-quiz/dokumentaatio/vaatimusmaarittely.md)
 
