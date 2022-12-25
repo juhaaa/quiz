@@ -4,6 +4,8 @@ from services.connection_services import get_db_connection
 from entities.highscores import Highscores
 from entities.game import Game
 from ui.game_ui import game_interface_main, ui_answer
+from ui.highscore_ui import user_input_ui
+from services.highscore_services import check_scores, file_check
 
 
 
@@ -19,8 +21,11 @@ def start_game(stdscr):
     date = str(datetime.date.today())
     game = Game()
     result = play_game(game, stdscr)
-    score = Highscores("", result, date)
-    score.save_score(stdscr)
+    file_check()
+    if check_scores(result):
+        player_name = user_input_ui(stdscr)
+        score = Highscores(player_name, result, date)
+        score.save_score()
 
 # main game loop, returns score
 

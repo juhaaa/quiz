@@ -8,5 +8,5 @@ class Highscores:
         self.date = date
 
 
-    def save_score(self, stdscr):
-        save_to_file(self, stdscr)
+    def save_score(self):
+        save_to_file(self)

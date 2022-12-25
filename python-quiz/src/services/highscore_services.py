@@ -20,26 +20,23 @@ def file_check():
 
 # saves highscore to a .csv file ordered by score
 
-def save_to_file(highscore, stdscr):
+def save_to_file(highscore):
     if highscore.score == 0:
         return
     scores = []
-    file_check()
-    if check_scores(highscore.score):
-        highscore.name = user_input_ui(stdscr)
-        score = [highscore.name, highscore.score, highscore.date]
-        scores.append(score)
+    score = [highscore.name, highscore.score, highscore.date]
+    scores.append(score)
 
-        with open(path, "r", encoding='UTF8') as file:
-            for row in file:
-                scores.append(row.strip().split(","))
-        scores = scores[:10]
-        scores.sort(key= lambda x: int(x[1]), reverse= True)
+    with open(path, "r", encoding='UTF8') as file:
+        for row in file:
+            scores.append(row.strip().split(","))
+    scores = scores[:10]
+    scores.sort(key= lambda x: int(x[1]), reverse= True)
 
-        with open(path, "w", encoding='UTF8', newline='') as file:
-            writer = csv.writer(file)
-            for row in scores:
-                writer.writerow(row)
+    with open(path, "w", encoding='UTF8', newline='') as file:
+        writer = csv.writer(file)
+        for row in scores:
+            writer.writerow(row)
 # checks does the current score qualify for top list
 
 def check_scores(score):
