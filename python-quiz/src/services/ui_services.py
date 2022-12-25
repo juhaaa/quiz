@@ -1,7 +1,5 @@
 import curses
 
-
-
 def menu_scroll(key, row_index, length):
     """Gets pressed key and current index, returns new menu index
     for either main menu or gameplay

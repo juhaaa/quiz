@@ -15,7 +15,7 @@ class Questions:
         """
         self._db = connection
 
-    
+
     def get_questions(self):
         """Returns tuple of correct answer, country name and list of answers,
             after randomizing the order.

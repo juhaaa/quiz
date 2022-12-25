@@ -16,7 +16,6 @@ def file_check():
     Returns:
         Boolean: Confirmation
     """
-  
     if not exists(path):
         with open(path, "w", encoding='UTF8') as file:
             file.close()
@@ -106,3 +105,4 @@ def read_data():
             if int(rows[1]) < min_score:
                 min_score = int(rows[1])
     return score_amount, min_score
+    
