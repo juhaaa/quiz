@@ -1,9 +1,18 @@
 import curses
 from curses import wrapper
 
-#ui screen for user to enter name if score permits
+
 
 def user_input_ui(stdscr):
+    """Ui screen for user to input name, displays until name is entered
+    correctly.
+
+    Args:
+        stdscr (Window): Curses window
+
+    Returns:
+        str: players name
+    """
     user_name = ""
     while True:
         if len(user_name) > 0:
@@ -23,6 +32,14 @@ def user_input_ui(stdscr):
             not_name(stdscr, y, x, h)
     
 def not_name(stdscr, y, x, h):
+    """Reminder to enter a valid name.
+
+    Args:
+        stdscr (Window): Curses window
+        y (int): terminal center y
+        x (int): terminal center x
+        h (int): terminal max heigth
+    """
     stdscr.clear()
     stdscr.addstr(y,x, f"Please enter a valid name!")
     stdscr.addstr(h-2, 2, "Press any key to continue")
@@ -31,12 +48,18 @@ def not_name(stdscr, y, x, h):
     stdscr.refresh()
 
 def name_exists(stdscr, y, x, user_name, h):
+    """Ui screen to congratulate player.
+
+    Args:
+        stdscr (Window): Curses window
+        y (int): terminal center y
+        x (int): terminal center x
+        h (int): terminal max heigth
+        user_name (str): players name.
+    """
     stdscr.clear()
     stdscr.addstr(y,x, f"You did good {user_name}!")
     stdscr.addstr(h-2, 2, "Press any key to continue")
     curses.beep()
     stdscr.getch()
     stdscr.refresh()
-
-if __name__ == "__main__":
-    wrapper(user_input_ui)

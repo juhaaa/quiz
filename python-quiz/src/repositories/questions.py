@@ -4,16 +4,26 @@ from services.question_services import additional_answers
 from services.question_services import more_additional_answers
 
 class Questions:
+    """Class which is responsible for questions during game.
+    """
 
-    # Class gets connection to question database
     def __init__(self, connection):
+        """Class gets connection to question database
+
+        Args:
+            connection (Connection): sqlite connnection object
+        """
         self._db = connection
 
-    # Returns tuple of correct answer, country name and list of answers,
-    # after randomizing the order.
-    # Tuples contain target country, correct and false answers.
-    # DB under progress.
+    
     def get_questions(self):
+        """Returns tuple of correct answer, country name and list of answers,
+            after randomizing the order.
+            Tuples contain target country, correct and false answers.
+
+        Returns:
+            Tuple: question with correct answer and false answers
+        """
 
         data = question_service(self._db)
         cca2 = data[0][0]
@@ -26,11 +36,18 @@ class Questions:
         random.shuffle(answers)
         return correct, cname, answers
 
-    # Gets answers for question. Answers usually cities within the same country.
-    # If not possible, gathers answers from other countries.
+
 
     def get_wrong_answers(self, cca2):
+        """Gets answers for question. Answers usually cities within the same country.
+            If not possible, gathers answers from other countries.
 
+        Args:
+            cca2 (str): Country code
+
+        Returns:
+            list: list with wrong answers
+        """
         data = additional_answers(cca2, self._db)
         answer_count = len(data)
 

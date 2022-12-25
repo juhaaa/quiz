@@ -8,18 +8,28 @@ import csv
 dir = os.path.dirname(__file__)  # pylint: disable=redefined-builtin
 path = os.path.join(dir, "..", "..", "data", "highscores.csv")
 
-#check file existing
-#if not, create
+
 
 def file_check():
+    """Checks if file exists. If not, create and confirm.
+
+    Returns:
+        Boolean: Confirmation
+    """
+  
     if not exists(path):
         with open(path, "w", encoding='UTF8') as file:
             file.close()
     return True
 
-# saves highscore to a .csv file ordered by score
 
 def save_to_file(highscore):
+    """saves highscore to a .csv file ordered by score.
+
+    Args:
+        highscore (Higschore): Higscore object consists of information about game finished.
+
+    """
     if highscore.score == 0:
         return
     scores = []
@@ -36,18 +46,33 @@ def save_to_file(highscore):
         writer = csv.writer(file)
         for row in scores:
             writer.writerow(row)
-# checks does the current score qualify for top list
+
 
 def check_scores(score):
+    """Checks does the current score qualify for top list by evaluating .csv's
+    lowest score and score.
+
+    Args:
+        score (int): score to evaluate
+
+    Returns:
+        boolean: outcome depends of the evaluation. True if score makes it to the list.
+    """
     data = read_data()
     if data[0] == 10:
         if data[1] >= score:
             return False
     return True
 
-# return saved highscores top-10
+
 
 def get_scores():
+    """ Reads the store .csv file.
+    Returns saved highscores top-10 as str list to be printed for user.
+
+    Returns:
+        list: list of highscores as str.
+    """
     scores_as_str_list = []
     file_check()
 
@@ -62,10 +87,15 @@ def get_scores():
     return scores_as_str_list
 
 
-# reads highscores.csv and returns amount of scores saved
-# and minimum score.
+
 
 def read_data():
+    """Reads highscores.csv and returns amount of scores saved
+    and minimum score.
+
+    Returns:
+        Tuple: score amount in int and min_score int
+    """
     min_score = 1000
     file_check()
     with open(path, "r", encoding='UTF8') as file:

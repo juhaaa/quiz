@@ -1,7 +1,11 @@
-# function is provided with connection and returns country,
-# cca2 and correct capital from questions database
-
 def question_service(connection):
+    """Gets country data from database table Countries.
+
+    Args:
+        Connection: db connection
+    Returns:
+        List: Country, cca2, Capital
+    """
     data = connection.execute(
         """SELECT *
         FROM Countries
@@ -10,10 +14,17 @@ def question_service(connection):
         ).fetchall()
     return data
 
-# provided with countrys cca2- code and db- connection,
-# returns 3 random cities (if possible), located in that country.
 
 def additional_answers(cca2, connection):
+    """Provided with countrys cca2- code and db- connection,
+    returns 3 random cities (if possible), located in that country.
+
+    Args:
+        str : Country code
+        Connection: db connection
+    Returns:
+        List: cities
+    """
     data = connection.execute(
         """SELECT Cities.name
         FROM Cities, Countries
@@ -28,6 +39,17 @@ def additional_answers(cca2, connection):
 # (in case theres not enough cities in the country etc...)
 
 def more_additional_answers(amount, connection):
+    """Provides more answer cities from random countries,
+    amount depending how many was originally acquired
+    (in case theres not enough cities in the country etc...)
+
+    Args:
+        int: Amount of cities needed
+        Connection: db connection
+    Returns:
+        List: cities
+    """
+
     data = connection.execute(
         """SELECT Cities.name
         FROM Cities, Countries

@@ -1,7 +1,18 @@
 import curses
 from services.ui_services import menu_scroll
 
-def game_interface_main(stdscr,country, answers, score):
+def game_interface_main(stdscr, country, answers, score):
+    """Ui displaying questions, accepts user input.
+
+    Args:
+        stdscr (Window): Curses window object
+        country (str): Country name
+        answers (list): list of answers, both false and correct.
+        score (int): current score
+
+    Returns:
+        int: current row index + 1 == chosen answer
+    """
     row_index = 0
     h, w = stdscr.getmaxyx()
     game_interface_choices(stdscr, row_index,country, answers, score)
@@ -19,6 +30,15 @@ def game_interface_main(stdscr,country, answers, score):
 
 
 def game_interface_choices(stdscr, row_index, country, answers, score):
+    """Displays the question and highlights current index.
+
+    Args:
+        stdscr (Window): Curses window object
+        row_index (int): index corresponding to answer row
+        country (str): questions country
+        answers (list): correct and wrong answers
+        score (int): current game score
+    """
     stdscr.clear()
     h, w = stdscr.getmaxyx()
     menu = answers
@@ -38,9 +58,15 @@ def game_interface_choices(stdscr, row_index, country, answers, score):
     curses.beep()
     stdscr.refresh()
 
-# these two display the outcome of players answers
+
 
 def ui_answer(stdscr, correct_string):
+    """Displays the outcome of players choice.
+
+    Args:
+        stdscr (Window): Curses window object
+        correct_string (str): string to be displayed.
+    """
     stdscr.clear()
     h, w = stdscr.getmaxyx()
     x = w//2 - len(correct_string)//2

@@ -12,12 +12,24 @@ from ui.highscore_ui import user_input_ui
 #init questions
 
 def init_questions():
+    """ Initializes Questions object
+
+    Returns:
+        _Question: Class Question object which handles trivia questions.
+    """
     question_object = Questions(get_db_connection())
     return question_object
 
 #Start game
 
 def start_game(stdscr):
+    """Start game handles events in case player starts game.
+        it runs the game, and checks if the the score will be saved,
+        and gathers user input if needed for the name.
+
+    Args:
+        stdscr (Window): Curses Window object for displaying game
+    """
     date = str(datetime.date.today())
     game = Game()
     result = play_game(game, stdscr)
@@ -27,9 +39,17 @@ def start_game(stdscr):
         score = Highscores(player_name, result, date)
         score.save_score()
 
-# main game loop, returns score
 
 def play_game(game, stdscr):
+    """Main game loop. Runs while game rounds < 11.
+
+    Args:
+        game (Game): Game object for scorekeeping and round count.
+        stdscr (Window): Curses Window object for displaying game
+
+    Returns:
+        int: score after the game is played
+    """
     question_object = init_questions()
     game.running = True
 
@@ -50,10 +70,17 @@ def play_game(game, stdscr):
     return game.score
 
 
-# checks answers outcome
-# return boolean to update game- object accordingly
-
 def check_correct(correct, answer):
+    """Checks answers outcome.
+    Returns boolean to update game- object accordingly
+
+    Args:
+        correct (str): correct answer
+        answer (str): players answer
+
+    Returns:
+        boolean: status of answer being correct or not
+    """
     if correct == answer:
         return True
     return False

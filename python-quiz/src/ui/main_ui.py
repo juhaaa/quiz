@@ -4,12 +4,14 @@ from services.game_services import start_game
 from services.ui_services import menu_scroll
 
 
-
-# main menu- loop functioning with up and down arrow keys and input is selected
-# with linefeed, enter or space
-# Is able to exit, start game and show highscores
-
 def main(stdscr):
+    """Main menu- loop functioning with up and down arrow keys and input is selected
+    with linefeed, enter or space
+    Is able to exit, start game and show highscores
+
+    Args:
+        stdscr (Window): Curses window initialized at index.py
+    """
     row_index = 0
     main_menu(stdscr, row_index)
     while True:
@@ -28,10 +30,16 @@ def main(stdscr):
         curses.beep()
         stdscr.refresh()
     
-# prints main menu on screen, highlighting 
-# current user choice
+
 
 def main_menu(stdscr, row_index):
+    """Prints main menu on screen, highlighting 
+    current user choice.
+
+    Args:
+        stdscr (Window): Curses window
+        row_index (int): Current menu row
+    """
     stdscr.clear()
     h, w = stdscr.getmaxyx()
     menu = ["Play", "Highscores", "Quit"]
@@ -52,11 +60,13 @@ def main_menu(stdscr, row_index):
     stdscr.refresh()
 
 
-# using get_scores function from highscore_services,
-# prints scores to the screen and then waits for
-# anykey
-
 def highscores(stdscr):
+    """Using get_scores function from highscore_services,
+    prints scores to the screen and then waits for anykey.
+
+    Args:
+        stdscr (Window): Curses window
+    """
     scores = get_scores()
     h, w = stdscr.getmaxyx()
     stdscr.clear()
