@@ -20,3 +20,9 @@
 
 - Muutettu käyttöliittymä käyttäen curses- kirjastoa.
 - Pyritty täydentämään edellisellä viikolla menetettyä(100 -> 20) testikattavuutta.
+
+## Viikko 8
+
+- Käyttöliittymän parantelua.
+- Inputin eriyttämistä.
+- Testikattavuuden nosto 80 %.

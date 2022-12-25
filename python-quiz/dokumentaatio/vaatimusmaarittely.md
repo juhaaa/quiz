@@ -32,12 +32,11 @@ pelaajiin.
 
 - Kysymystietokanta kunnossa
 - Kysymykset voidaan hakea tietokannasta.
-- Alustava komentorivikäyttöliittymä.
+- Komentorivikäyttöliittymä.
 - Pisteiden tallennus
 - "Graafinen terminaalikäyttöliittymä", curses.
 
 ## Tekemättä
 
-- Testausta uupuu
 - Online tallennus?
 

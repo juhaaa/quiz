@@ -1,7 +1,6 @@
 import os
 from os.path import exists
 import csv
-from ui.highscore_ui import user_input_ui
 
 
 #get path

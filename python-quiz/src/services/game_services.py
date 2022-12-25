@@ -1,11 +1,11 @@
 import datetime
 from repositories.questions import Questions
 from services.connection_services import get_db_connection
+from services.highscore_services import check_scores, file_check
 from entities.highscores import Highscores
 from entities.game import Game
 from ui.game_ui import game_interface_main, ui_answer
 from ui.highscore_ui import user_input_ui
-from services.highscore_services import check_scores, file_check
 
 
 

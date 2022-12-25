@@ -11,4 +11,5 @@
 |6.12	|7	|Sovelluslogiikan eriyttämistä, pisteiden tallennus.|
 |12.12	|8	|Curses- käyttöliittymä|
 |13.12	|6	|Testikattavuuden parannusta.|
-|Yht.	|48	|
+|25.12	|4	|Testikattavuus, käyttöliittymä, dokumentaatio|
+|Yht.	|52	|
