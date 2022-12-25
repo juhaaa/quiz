@@ -4,18 +4,15 @@
 
 - Ennen ohjelman käynnistämistä suorita python-quiz kansiossa komento:
 
+
 ```bash
-
 poetry install
-
-´´´
+```
 - Käynnistä ohjelma komennolla:
 
 ```bash
-
 poetry run invoke start
-
-´´´
+```
 
 ## Käyttöohje
 
