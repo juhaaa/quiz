@@ -22,6 +22,8 @@ tallennetaan .csv tiedostoon.
 
 - [Release](https://github.com/juhaaa/ot-harjoitustyo/releases)
 
+- [Testikattavuus](python-quiz/dokumentaatio/testidokumentti.md)
+
 ## Ohjelman käyttö
 
 Navigoi ensin python-quiz kansioon ja kirjoita seuraavat komennot terminaalissa:
