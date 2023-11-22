@@ -61,7 +61,7 @@ poetry run invoke lint
 
 - Ohjelma käynnistyy seuraavassa näkymässä:
 
-![](.python-quiz/dokumentaatio/kuvat/start.png)
+![](python-quiz/dokumentaatio/kuvat/start.png)
 
 - Voit liikkua ylös tai alas nuolinäppäimillä ja hyväksyä valinnan enterillä tai välilyönnillä.
 - Play aloittaa uuden pelin.
@@ -81,7 +81,7 @@ tai välilyönnillä.
 - Mikäli sait pelin päättyessä tarpeeksi pisteitä saadaksesi nimesi top-10 listalle,
 kysyy peli sinulta nimeä. Voit syöttää max 15 merkkiä.
 
-![](.python-quiz/dokumentaatio/kuvat/user_name.png) 
+![](python-quiz/dokumentaatio/kuvat/user_name.png) 
 
 
 ## Muita ohjeita
