@@ -76,7 +76,7 @@ joihin sinun pitään yrittää vastata oikein 4 vaihtoehdosta.
 tai välilyönnillä.
 - Alareunassa näkyy ajankohtainen pistetilanne. 
 
-![](.python-quiz/dokumentaatio/kuvat/game.png)
+![](python-quiz/dokumentaatio/kuvat/game.png)
 
 - Mikäli sait pelin päättyessä tarpeeksi pisteitä saadaksesi nimesi top-10 listalle,
 kysyy peli sinulta nimeä. Voit syöttää max 15 merkkiä.
